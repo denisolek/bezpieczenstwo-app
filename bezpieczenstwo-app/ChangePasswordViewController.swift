@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChangePasswordViewController.swift
 //  bezpieczenstwo-app
 //
 //  Created by Denis Olek on 10.10.2017.
@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ChangePasswordViewController: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.hideKeyboardWhenTappedAround()
+        backButton.setupBackButton()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
-
