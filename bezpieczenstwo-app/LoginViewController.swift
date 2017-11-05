@@ -11,10 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 class LoginViewController: UIViewController {
-
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+
     @IBAction func loginOnClick(_: Any) {
         getToken()
     }
@@ -29,7 +28,13 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    fileprivate func navigateAccountView() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let accountVC = storyBoard.instantiateViewController(withIdentifier: "accountView")
+        self.present(accountVC, animated: true, completion: nil)
+    }
+    
     func getToken() {
         let GET_TOKEN_URL = "http://bsm.denisolek.com/oauth/token?grant_type=password"
         let GET_TOKEN_PARAMS = [
@@ -45,16 +50,14 @@ class LoginViewController: UIViewController {
                           parameters: GET_TOKEN_PARAMS,
                           encoding: URLEncoding.default,
                           headers: GET_TOKEN_HEADERS).responseJSON { response in
-//          debugPrint(response)
+            //          debugPrint(response)
             if let status = response.response?.statusCode {
                 switch status {
                 case 200:
                     let json = JSON(data: response.data!)
                     print(json["access_token"])
                     user.setAccessToken(_accessToken: json["access_token"].string!)
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let accountVC = storyBoard.instantiateViewController(withIdentifier: "accountView")
-                    self.present(accountVC, animated: true, completion: nil)
+                    self.navigateAccountView()
                 case 401:
                     self.showAlertOK(_title: "ERROR", _message: "Invalid username or password")
                 default:

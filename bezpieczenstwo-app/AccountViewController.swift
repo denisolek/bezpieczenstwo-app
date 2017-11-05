@@ -18,4 +18,10 @@ class AccountViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if(user.getAccessToken() != nil) {
+            self.invalidTokenAlert()
+        }
+    }
 }
