@@ -11,12 +11,11 @@ import FontAwesome_swift
 
 class RegisterViewController: UIViewController {
 
-    
     @IBOutlet weak var backButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
         backButton.setupBackButton()
     }
 

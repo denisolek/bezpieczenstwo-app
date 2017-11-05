@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -92,6 +92,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="39A-L2-cFJ" id="MtB-MU-5vY"/>
+                        <outlet property="usernameField" destination="hpe-lD-gcx" id="qlN-mT-pIA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +104,7 @@
         <!--Account View Controller-->
         <scene sceneID="bnN-hp-QHy">
             <objects>
-                <viewController id="Xhb-XI-7z4" customClass="AccountViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountView" id="Xhb-XI-7z4" customClass="AccountViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0ZN-U5-sWa"/>
                         <viewControllerLayoutGuide type="bottom" id="yvd-MA-zGC"/>
@@ -171,7 +175,7 @@
         <!--Register View Controller-->
         <scene sceneID="43e-Ok-uuI">
             <objects>
-                <viewController id="ucS-ks-dQb" customClass="RegisterViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerView" id="ucS-ks-dQb" customClass="RegisterViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Ap-5f-edK"/>
                         <viewControllerLayoutGuide type="bottom" id="dKC-kk-SCL"/>
@@ -237,7 +241,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="bh7-2K-Lnf">
             <objects>
-                <viewController id="ldO-oz-77I" customClass="ChangePasswordViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changePasswordView" id="ldO-oz-77I" customClass="ChangePasswordViewController" customModule="bezpieczenstwo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXa-NW-Jo3"/>
                         <viewControllerLayoutGuide type="bottom" id="F6U-TW-OR3"/>
@@ -302,7 +306,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IcZ-CI-8Nn"/>
+        <segue reference="BFw-SK-KKl"/>
         <segue reference="j6z-ir-7Oe"/>
     </inferredMetricsTieBreakers>
 </document>
