@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		667AF1091F8D4F2A00A3ECBA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF1081F8D4F2A00A3ECBA /* AccountViewController.swift */; };
 		667AF10E1F8D516700A3ECBA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF10D1F8D516700A3ECBA /* Extensions.swift */; };
+		66C463B91FAFBDF900FB37D3 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C463B81FAFBDF900FB37D3 /* Exceptions.swift */; };
 		66C61C741F8D099B0020F4E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C61C731F8D099B0020F4E5 /* AppDelegate.swift */; };
 		66C61C761F8D099B0020F4E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C61C751F8D099B0020F4E5 /* LoginViewController.swift */; };
 		66C61C791F8D099B0020F4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C61C771F8D099B0020F4E5 /* Main.storyboard */; };
@@ -16,12 +17,14 @@
 		66C61C7E1F8D099B0020F4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C61C7C1F8D099B0020F4E5 /* LaunchScreen.storyboard */; };
 		66C61C871F8D166C0020F4E5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C61C861F8D166C0020F4E5 /* RegisterViewController.swift */; };
 		66C61C891F8D169E0020F4E5 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C61C881F8D169E0020F4E5 /* ChangePasswordViewController.swift */; };
+		66D771B21FAF9E850089DF3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D771B11FAF9E850089DF3B /* User.swift */; };
 		BA3FCB9786B859AA12C484DC /* Pods_bezpieczenstwo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB823687FC01C606A69D2E6 /* Pods_bezpieczenstwo_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		667AF1081F8D4F2A00A3ECBA /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		667AF10D1F8D516700A3ECBA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		66C463B81FAFBDF900FB37D3 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 		66C61C701F8D099B0020F4E5 /* bezpieczenstwo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bezpieczenstwo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C61C731F8D099B0020F4E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66C61C751F8D099B0020F4E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 		66C61C7F1F8D099B0020F4E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66C61C861F8D166C0020F4E5 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		66C61C881F8D169E0020F4E5 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		66D771B11FAF9E850089DF3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6BB823687FC01C606A69D2E6 /* Pods_bezpieczenstwo_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bezpieczenstwo_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C004724429251BF4124ECD9B /* Pods-bezpieczenstwo-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bezpieczenstwo-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bezpieczenstwo-app/Pods-bezpieczenstwo-app.debug.xcconfig"; sourceTree = "<group>"; };
 		DCCDADB0146ACCF1534D9779 /* Pods-bezpieczenstwo-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bezpieczenstwo-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-bezpieczenstwo-app/Pods-bezpieczenstwo-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				667AF10D1F8D516700A3ECBA /* Extensions.swift */,
+				66D771B11FAF9E850089DF3B /* User.swift */,
+				66C463B81FAFBDF900FB37D3 /* Exceptions.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -230,12 +236,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -250,9 +258,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				66C61C871F8D166C0020F4E5 /* RegisterViewController.swift in Sources */,
+				66C463B91FAFBDF900FB37D3 /* Exceptions.swift in Sources */,
 				667AF10E1F8D516700A3ECBA /* Extensions.swift in Sources */,
 				667AF1091F8D4F2A00A3ECBA /* AccountViewController.swift in Sources */,
 				66C61C891F8D169E0020F4E5 /* ChangePasswordViewController.swift in Sources */,
+				66D771B21FAF9E850089DF3B /* User.swift in Sources */,
 				66C61C761F8D099B0020F4E5 /* LoginViewController.swift in Sources */,
 				66C61C741F8D099B0020F4E5 /* AppDelegate.swift in Sources */,
 			);
