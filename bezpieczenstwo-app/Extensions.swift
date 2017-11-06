@@ -34,6 +34,16 @@ extension UIViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
+    
+    func userCreatedAlert() {
+        let alert = UIAlertController(title: "Created", message: "You can log in now!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_: UIAlertAction!) in
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginView")
+            self.present(loginVC, animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension UIButton {
