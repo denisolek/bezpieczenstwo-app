@@ -24,10 +24,10 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
     func invalidTokenAlert() {
         let alert = UIAlertController(title: "Error", message: "Access token expired", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_: UIAlertAction!) in
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginView")
             self.present(loginVC, animated: true, completion: nil)

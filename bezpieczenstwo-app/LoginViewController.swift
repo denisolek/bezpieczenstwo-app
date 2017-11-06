@@ -28,13 +28,13 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     fileprivate func navigateAccountView() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let accountVC = storyBoard.instantiateViewController(withIdentifier: "accountView")
-        self.present(accountVC, animated: true, completion: nil)
+        present(accountVC, animated: true, completion: nil)
     }
-    
+
     func getToken() {
         let GET_TOKEN_URL = "http://bsm.denisolek.com/oauth/token?grant_type=password"
         let GET_TOKEN_PARAMS = [
@@ -59,6 +59,8 @@ class LoginViewController: UIViewController {
                 case 401:
                     self.showAlertOK(_title: "Error", _message: "Invalid username or password")
                 default:
+                    debugPrint(response)
+                    self.showAlertOK(_title: "Ups!", _message: "Something went wrong")
                     print("error with response status: \(status)")
                 }
             }

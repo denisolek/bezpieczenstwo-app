@@ -142,6 +142,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="LOGOUT"/>
                                 <connections>
+                                    <action selector="logoutOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="xuD-oS-Axe"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="5Pn-Ma-VYe"/>
                                 </connections>
                             </button>
@@ -164,6 +165,18 @@
                                 <rect key="frame" x="135" y="351" width="104" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="t7I-Ke-cKP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-aD-coR">
+                                <rect key="frame" x="34" y="532" width="99" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Change password"/>
+                                <connections>
+                                    <action selector="changePasswordOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="aTt-Iw-Ph6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
