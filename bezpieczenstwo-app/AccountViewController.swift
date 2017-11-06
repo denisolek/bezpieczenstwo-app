@@ -43,6 +43,11 @@ class AccountViewController: UIViewController {
         }
         getUserData()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.usernameLabel.text = ""
+        self.messageLabel.text = ""
+    }
 
     func getUserData() {
         let GET_USER_URL = "http://bsm.denisolek.com/api/users"
