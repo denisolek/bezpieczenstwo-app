@@ -56,6 +56,8 @@ class LoginViewController: UIViewController {
                     let json = JSON(data: response.data!)
                     user.setAccessToken(_accessToken: json["access_token"].string!)
                     self.navigateAccountView()
+                case 400:
+                    self.showAlertOK(_title: "Error", _message: "Invalid username or password")
                 case 401:
                     self.showAlertOK(_title: "Error", _message: "Invalid username or password")
                 default:

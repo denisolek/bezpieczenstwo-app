@@ -157,7 +157,7 @@
                                 <rect key="frame" x="16" y="163" width="343" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.91572215025906734" green="0.91572215025906734" blue="0.91572215025906734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </mutableString>
+                                <string key="text">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -176,6 +176,7 @@
                                 <state key="normal" title="Change password"/>
                                 <connections>
                                     <action selector="changePasswordOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="aTt-Iw-Ph6"/>
+                                    <segue destination="ldO-oz-77I" kind="show" id="XDx-2M-Pqr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -286,6 +287,9 @@
                                 <rect key="frame" x="113" y="410" width="148" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Update password"/>
+                                <connections>
+                                    <action selector="updatePasswordOnClick:" destination="ldO-oz-77I" eventType="touchUpInside" id="HYn-sw-0QW"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password again" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-Bx-9Fj">
                                 <rect key="frame" x="16" y="338" width="343" height="30"/>
@@ -316,6 +320,9 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="VoW-Ff-Ggh" id="nEq-yZ-WMZ"/>
+                        <outlet property="newPasswordAgainField" destination="OGE-Bx-9Fj" id="BpT-45-LlH"/>
+                        <outlet property="newPasswordField" destination="Tfs-7n-oPm" id="jYI-pi-GUs"/>
+                        <outlet property="oldPasswordField" destination="nwi-Gc-c6U" id="YxS-xN-SgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9u-jC-4s5" userLabel="First Responder" sceneMemberID="firstResponder"/>
