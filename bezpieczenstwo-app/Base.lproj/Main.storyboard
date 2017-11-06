@@ -168,6 +168,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Ygo-Sz-niw" id="mAm-Tt-Imu"/>
+                        <outlet property="usernameLabel" destination="f8d-rx-Opk" id="2ho-QF-pzd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-ln-Gqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

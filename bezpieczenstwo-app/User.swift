@@ -9,12 +9,12 @@
 import Foundation
 
 class User {
-    var username: String?
-    var message: String?
-    var messageDate: String?
-    var accessToken: String?
+    var username: String = ""
+    var message: String = ""
+    var messageDate: String = ""
+    var accessToken: String = ""
 
-    func getUsername() -> String? {
+    func getUsername() -> String {
         return username
     }
 
@@ -22,7 +22,7 @@ class User {
         username = _username
     }
 
-    func getMessage() -> String? {
+    func getMessage() -> String {
         return message
     }
 
@@ -30,7 +30,7 @@ class User {
         message = _message
     }
 
-    func getAccessToken() -> String? {
+    func getAccessToken() -> String {
         return accessToken
     }
 

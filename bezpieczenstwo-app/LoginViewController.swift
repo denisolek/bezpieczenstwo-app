@@ -50,16 +50,14 @@ class LoginViewController: UIViewController {
                           parameters: GET_TOKEN_PARAMS,
                           encoding: URLEncoding.default,
                           headers: GET_TOKEN_HEADERS).responseJSON { response in
-            //          debugPrint(response)
             if let status = response.response?.statusCode {
                 switch status {
                 case 200:
                     let json = JSON(data: response.data!)
-                    print(json["access_token"])
                     user.setAccessToken(_accessToken: json["access_token"].string!)
                     self.navigateAccountView()
                 case 401:
-                    self.showAlertOK(_title: "ERROR", _message: "Invalid username or password")
+                    self.showAlertOK(_title: "Error", _message: "Invalid username or password")
                 default:
                     print("error with response status: \(status)")
                 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		667AF1091F8D4F2A00A3ECBA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF1081F8D4F2A00A3ECBA /* AccountViewController.swift */; };
 		667AF10E1F8D516700A3ECBA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF10D1F8D516700A3ECBA /* Extensions.swift */; };
-		66C463B91FAFBDF900FB37D3 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C463B81FAFBDF900FB37D3 /* Exceptions.swift */; };
 		66C61C741F8D099B0020F4E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C61C731F8D099B0020F4E5 /* AppDelegate.swift */; };
 		66C61C761F8D099B0020F4E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C61C751F8D099B0020F4E5 /* LoginViewController.swift */; };
 		66C61C791F8D099B0020F4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C61C771F8D099B0020F4E5 /* Main.storyboard */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		667AF1081F8D4F2A00A3ECBA /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		667AF10D1F8D516700A3ECBA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		66C463B81FAFBDF900FB37D3 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 		66C61C701F8D099B0020F4E5 /* bezpieczenstwo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bezpieczenstwo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C61C731F8D099B0020F4E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66C61C751F8D099B0020F4E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			children = (
 				667AF10D1F8D516700A3ECBA /* Extensions.swift */,
 				66D771B11FAF9E850089DF3B /* User.swift */,
-				66C463B81FAFBDF900FB37D3 /* Exceptions.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66C61C871F8D166C0020F4E5 /* RegisterViewController.swift in Sources */,
-				66C463B91FAFBDF900FB37D3 /* Exceptions.swift in Sources */,
 				667AF10E1F8D516700A3ECBA /* Extensions.swift in Sources */,
 				667AF1091F8D4F2A00A3ECBA /* AccountViewController.swift in Sources */,
 				66C61C891F8D169E0020F4E5 /* ChangePasswordViewController.swift in Sources */,
