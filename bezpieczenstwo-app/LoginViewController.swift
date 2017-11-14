@@ -20,12 +20,14 @@ class LoginViewController: UIViewController {
     
     var jsonUsername = String()
     var jsonMessage = String()
+    var jsonMessageDate = String()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.destination is AccountViewController) {
             let accountVC = segue.destination as! AccountViewController
             accountVC.username = jsonUsername
             accountVC.message = jsonMessage.decrypt(_password: passwordField.text!)
+            accountVC.messageDate = jsonMessageDate
         }
     }
     
@@ -38,12 +40,6 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    fileprivate func navigateAccountView() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let accountVC = storyBoard.instantiateViewController(withIdentifier: "accountView")
-        present(accountVC, animated: true, completion: nil)
     }
 
     func getToken() {
@@ -67,7 +63,6 @@ class LoginViewController: UIViewController {
                     let json = JSON(data: response.data!)
                     user.setAccessToken(_accessToken: json["access_token"].string!)
                     self.getUserData()
-//                    self.navigateAccountView()
                 case 400:
                     self.showAlertOK(_title: "Error", _message: "Invalid username or password")
                 case 401:
@@ -95,9 +90,8 @@ class LoginViewController: UIViewController {
                                     print(json)
                                     self.jsonUsername = json["username"].string!
                                     self.jsonMessage = json["message"].string!
+                                    self.jsonMessageDate = json["messageDate"].string!
                                     self.performSegue(withIdentifier: "loginSegue", sender: self)
-//                                    self.usernameLabel.text = json["username"].string!
-//                                    self.messageLabel.text = json["message"].string!
                                 case 401:
                                     self.invalidTokenAlert()
                                 default:
