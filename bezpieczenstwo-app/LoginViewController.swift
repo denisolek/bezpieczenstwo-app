@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
     }
 
     func getToken() {
-        let GET_TOKEN_URL = "http://bsm.denisolek.com/oauth/token?grant_type=password"
+        let GET_TOKEN_URL = "https://bsm.denisolek.com/oauth/token?grant_type=password"
         let GET_TOKEN_PARAMS = [
             "username": usernameField.text!,
             "password": passwordField.text!,
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
         let AUTHORIZATION_HEADER = [
             "Authorization": "Bearer " + user.getAccessToken(),
             ]
-        let GET_USER_URL = "http://bsm.denisolek.com/api/users"
+        let GET_USER_URL = "https://bsm.denisolek.com/api/users"
         Alamofire.request(GET_USER_URL,
                           headers: AUTHORIZATION_HEADER).responseJSON { response in
                             if let status = response.response?.statusCode {

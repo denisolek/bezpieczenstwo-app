@@ -52,7 +52,7 @@ class ChangeMessageViewController: UIViewController {
         let AUTHORIZATION_HEADER = [
             "Authorization": "Bearer " + user.getAccessToken(),
             ]
-        let UPDATE_USER_URL = "http://bsm.denisolek.com/api/users"
+        let UPDATE_USER_URL = "https://bsm.denisolek.com/api/users"
         let UPDATE_USER_PARAMS: Parameters = [
             "content": messageTextView.text!.encrypt(_password: passwordField.text!),
             "password": passwordField.text!
@@ -69,7 +69,7 @@ class ChangeMessageViewController: UIViewController {
                                     self.showAlertInfo(_title: "Message updated to:", _message: json["message"].string!.decrypt(_password: self.passwordField.text!))
                                     self.getUserData()
                                 case 400:
-                                    self.showAlertOK(_title: "Bad request", _message: "Message or password is empty")
+                                    self.showAlertOK(_title: "Bad request", _message: "Message/password is empty or incorrect password")
                                 case 401:
                                     self.invalidTokenAlert()
                                 default:
@@ -85,7 +85,7 @@ class ChangeMessageViewController: UIViewController {
         let AUTHORIZATION_HEADER = [
             "Authorization": "Bearer " + user.getAccessToken(),
             ]
-        let GET_USER_URL = "http://bsm.denisolek.com/api/users"
+        let GET_USER_URL = "https://bsm.denisolek.com/api/users"
         Alamofire.request(GET_USER_URL,
                           headers: AUTHORIZATION_HEADER).responseJSON { response in
                             if let status = response.response?.statusCode {

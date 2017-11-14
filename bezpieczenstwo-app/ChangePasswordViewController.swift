@@ -36,7 +36,7 @@ class ChangePasswordViewController: UIViewController {
     }
 
     func updatePassword() {
-        let CHANGE_PASSWORD_URL = "http://bsm.denisolek.com/api/users/change-password"
+        let CHANGE_PASSWORD_URL = "https://bsm.denisolek.com/api/users/change-password"
         let CHANGE_PASSWORD_PARAMS: Parameters = [
             "content": currentMessage.encrypt(_password: newPasswordField.text!),
             "oldPassword": oldPasswordField.text!,

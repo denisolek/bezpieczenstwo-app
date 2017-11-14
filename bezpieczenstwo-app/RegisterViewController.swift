@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
     }
 
     func createUser() {
-        let CREATE_USER_URL = "http://bsm.denisolek.com/api/users"
+        let CREATE_USER_URL = "https://bsm.denisolek.com/api/users"
         let CREATE_USER_PARAMS: Parameters = [
             "username": usernameField.text!,
             "password": passwordField.text!,
