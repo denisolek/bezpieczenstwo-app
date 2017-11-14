@@ -95,6 +95,7 @@
                     <connections>
                         <outlet property="passwordField" destination="39A-L2-cFJ" id="MtB-MU-5vY"/>
                         <outlet property="usernameField" destination="hpe-lD-gcx" id="qlN-mT-pIA"/>
+                        <segue destination="Xhb-XI-7z4" kind="show" identifier="loginSegue" id="yWB-ig-WSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,14 +162,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kne-1T-e0P">
-                                <rect key="frame" x="135" y="351" width="104" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="t7I-Ke-cKP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-aD-coR">
                                 <rect key="frame" x="34" y="532" width="99" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,6 +170,14 @@
                                 <connections>
                                     <action selector="changePasswordOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="aTt-Iw-Ph6"/>
                                     <segue destination="ldO-oz-77I" kind="show" id="XDx-2M-Pqr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kne-1T-e0P">
+                                <rect key="frame" x="135" y="371" width="104" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveOnClick:" destination="Xhb-XI-7z4" eventType="touchUpInside" id="t7I-Ke-cKP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -189,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-ln-Gqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="943.17841079460277"/>
+            <point key="canvasLocation" x="137" y="1051"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="43e-Ok-uuI">
@@ -353,7 +354,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ECC-vT-1uk"/>
-        <segue reference="IcZ-CI-8Nn"/>
-        <segue reference="j6z-ir-7Oe"/>
+        <segue reference="yWB-ig-WSc"/>
+        <segue reference="5Pn-Ma-VYe"/>
     </inferredMetricsTieBreakers>
 </document>

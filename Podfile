@@ -6,4 +6,5 @@ target 'bezpieczenstwo-app' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'FontAwesome.swift'
+    pod 'AES256CBC'
 end

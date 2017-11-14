@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController {
         let CREATE_USER_PARAMS: Parameters = [
             "username": usernameField.text!,
             "password": passwordField.text!,
-            "message": messageField.text!,
+            "message": messageField.text!.encrypt(_password: passwordField.text!),
         ]
         Alamofire.request(CREATE_USER_URL,
                           method: .post,
@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController {
                 case 201:
                     self.userCreatedAlert()
                 case 400:
-                    self.showAlertOK(_title: "Bad request", _message: "Password requires 8-50 length and at least one of each: a-Z, 1-9 and secret message can't be empty")
+                    self.showAlertOK(_title: "Bad request", _message: "Password requires 8-32 length and at least one of each: a-Z, 1-9 and secret message can't be empty")
                 case 409:
                     self.showAlertOK(_title: "Conflict", _message: "Username already exists")
                 default:

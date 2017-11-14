@@ -17,7 +17,18 @@ class LoginViewController: UIViewController {
     @IBAction func loginOnClick(_: Any) {
         getToken()
     }
-
+    
+    var jsonUsername = String()
+    var jsonMessage = String()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.destination is AccountViewController) {
+            let accountVC = segue.destination as! AccountViewController
+            accountVC.username = jsonUsername
+            accountVC.message = jsonMessage.decrypt(_password: passwordField.text!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
@@ -55,7 +66,8 @@ class LoginViewController: UIViewController {
                 case 200:
                     let json = JSON(data: response.data!)
                     user.setAccessToken(_accessToken: json["access_token"].string!)
-                    self.navigateAccountView()
+                    self.getUserData()
+//                    self.navigateAccountView()
                 case 400:
                     self.showAlertOK(_title: "Error", _message: "Invalid username or password")
                 case 401:
@@ -66,6 +78,34 @@ class LoginViewController: UIViewController {
                     print("error with response status: \(status)")
                 }
             }
+        }
+    }
+    
+    func getUserData() {
+        let AUTHORIZATION_HEADER = [
+            "Authorization": "Bearer " + user.getAccessToken(),
+            ]
+        let GET_USER_URL = "http://bsm.denisolek.com/api/users"
+        Alamofire.request(GET_USER_URL,
+                          headers: AUTHORIZATION_HEADER).responseJSON { response in
+                            if let status = response.response?.statusCode {
+                                switch status {
+                                case 200:
+                                    let json = JSON(data: response.data!)
+                                    print(json)
+                                    self.jsonUsername = json["username"].string!
+                                    self.jsonMessage = json["message"].string!
+                                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+//                                    self.usernameLabel.text = json["username"].string!
+//                                    self.messageLabel.text = json["message"].string!
+                                case 401:
+                                    self.invalidTokenAlert()
+                                default:
+                                    debugPrint(response)
+                                    self.showAlertOK(_title: "Ups!", _message: "Something went wrong")
+                                    print("error with response status: \(status)")
+                                }
+                            }
         }
     }
 }

@@ -29,9 +29,14 @@ class AccountViewController: UIViewController {
         "Authorization": "Bearer " + user.getAccessToken(),
     ]
 
+    var username = String()
+    var message = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        usernameLabel.text = username
+        messageLabel.text = message
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,37 +44,17 @@ class AccountViewController: UIViewController {
     }
 
     override func viewDidAppear(_: Bool) {
-        if user.getAccessToken().isEmpty {
-            invalidTokenAlert()
-        }
-        getUserData()
+        print(message)
+//        if user.getAccessToken().isEmpty {
+//            invalidTokenAlert()
+//        }
+//        getUserData()
     }
 
-    override func viewDidDisappear(_: Bool) {
-        usernameLabel.text = ""
-        messageLabel.text = ""
-    }
-
-    func getUserData() {
-        let GET_USER_URL = "http://bsm.denisolek.com/api/users"
-        Alamofire.request(GET_USER_URL,
-                          headers: AUTHORIZATION_HEADER).responseJSON { response in
-            if let status = response.response?.statusCode {
-                switch status {
-                case 200:
-                    let json = JSON(data: response.data!)
-                    self.usernameLabel.text = json["username"].string!
-                    self.messageLabel.text = json["message"].string!
-                case 401:
-                    self.invalidTokenAlert()
-                default:
-                    debugPrint(response)
-                    self.showAlertOK(_title: "Ups!", _message: "Something went wrong")
-                    print("error with response status: \(status)")
-                }
-            }
-        }
-    }
+//    override func viewDidDisappear(_: Bool) {
+//        usernameLabel.text = ""
+//        messageLabel.text = ""
+//    }
 
     func updateUserData() {
         let UPDATE_USER_URL = "http://bsm.denisolek.com/api/users"
@@ -89,14 +74,14 @@ class AccountViewController: UIViewController {
                     self.messageLabel.text = json["message"].string!
                 case 400:
                     self.showAlertOK(_title: "Bad request", _message: "Message can't be empty")
-                    self.getUserData()
+//                    self.getUserData()
                 case 401:
                     self.invalidTokenAlert()
                 default:
                     debugPrint(response)
                     self.showAlertOK(_title: "Ups!", _message: "Something went wrong")
                     print("error with response status: \(status)")
-                    self.getUserData()
+//                    self.getUserData()
                 }
             }
         }
