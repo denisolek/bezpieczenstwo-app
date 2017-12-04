@@ -9,12 +9,23 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SimpleKeychain
+import AES256CBC
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-
+    @IBOutlet weak var touchIdSwitch: UISwitch!
+    
     @IBAction func loginOnClick(_: Any) {
+        getToken()
+    }
+
+    @IBAction func touchIdOnClick(_: Any) {
+        let keychain = A0SimpleKeychain()
+        let secret = keychain.string(forKey: "user-secret")!
+        usernameField.text = A0SimpleKeychain().string(forKey: "user-login")!.decrypt(_password: secret)
+        passwordField.text = A0SimpleKeychain().string(forKey: "user-password")!.decrypt(_password: secret)
         getToken()
     }
     
@@ -60,6 +71,16 @@ class LoginViewController: UIViewController {
             if let status = response.response?.statusCode {
                 switch status {
                 case 200:
+                    if(self.touchIdSwitch.isOn) {
+                        let secret = AES256CBC.generatePassword()
+                        A0SimpleKeychain().setString(self.usernameField.text!.encrypt(_password: secret), forKey:"user-login")
+                        A0SimpleKeychain().setString(self.passwordField.text!.encrypt(_password: secret), forKey:"user-password")
+                        let keychain = A0SimpleKeychain()
+                        keychain.useAccessControl = true
+                        keychain.defaultAccessiblity = .whenPasscodeSetThisDeviceOnly
+                        keychain.setString(secret, forKey:"user-secret")
+                        print("touch id password SET")
+                    }
                     let json = JSON(data: response.data!)
                     user.setAccessToken(_accessToken: json["access_token"].string!)
                     self.getUserData()

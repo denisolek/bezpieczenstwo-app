@@ -7,4 +7,5 @@ target 'bezpieczenstwo-app' do
     pod 'SwiftyJSON'
     pod 'FontAwesome.swift'
     pod 'AES256CBC'
+    pod 'SimpleKeychain'
 end
