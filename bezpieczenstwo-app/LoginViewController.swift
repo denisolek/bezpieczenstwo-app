@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var touchIdSwitch: UISwitch!
     
     @IBAction func loginOnClick(_: Any) {
-        getToken()
+        getToken(touchId: false)
     }
 
     @IBAction func touchIdOnClick(_: Any) {
@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         let secret = keychain.string(forKey: "user-secret")!
         usernameField.text = A0SimpleKeychain().string(forKey: "user-login")!.decrypt(_password: secret)
         passwordField.text = A0SimpleKeychain().string(forKey: "user-password")!.decrypt(_password: secret)
-        getToken()
+        getToken(touchId: true)
     }
     
     var jsonUsername = String()
@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func getToken() {
+    func getToken(touchId: Bool) {
         let GET_TOKEN_URL = "https://bsm.denisolek.com/oauth/token?grant_type=password"
         let GET_TOKEN_PARAMS = [
             "username": usernameField.text!,
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
             if let status = response.response?.statusCode {
                 switch status {
                 case 200:
-                    if(self.touchIdSwitch.isOn) {
+                    if(self.touchIdSwitch.isOn && !touchId) {
                         let secret = AES256CBC.generatePassword()
                         A0SimpleKeychain().setString(self.usernameField.text!.encrypt(_password: secret), forKey:"user-login")
                         A0SimpleKeychain().setString(self.passwordField.text!.encrypt(_password: secret), forKey:"user-password")

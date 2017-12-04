@@ -21,7 +21,6 @@ class AccountViewController: UIViewController {
     }
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var messageDateLabel: UILabel!
 
     var username = String()
     var message = String()
@@ -42,7 +41,6 @@ class AccountViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         usernameLabel.text = username
         messageLabel.text = message
-        messageDateLabel.text = messageDate
     }
 
     override func didReceiveMemoryWarning() {
